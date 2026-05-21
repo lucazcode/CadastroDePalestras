@@ -1,0 +1,159 @@
+### USUÁRIOS
+
+## Listar todos os usuários
+GET http://localhost:8080/cadastropalestras/usuarios
+
+## Cadastrar usuário
+POST http://localhost:8080/cadastropalestras/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Carlos Silva",
+  "email": "carlos.silva@email.com"
+}
+
+## Atualizar usuário
+PUT http://localhost:8080/cadastropalestras/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Carlos Silva Atualizado",
+  "email": "carlos.silva@email.com"
+}
+
+## Deletar usuário
+DELETE http://localhost:8080/cadastropalestras/usuarios/1
+
+###
+
+### ORGANIZADORES
+
+## Listar todos os organizadores
+GET http://localhost:8080/cadastropalestras/organizadores
+
+## Cadastrar organizador
+POST http://localhost:8080/cadastropalestras/organizadores
+Content-Type: application/json
+
+{
+  "nome": "Ana Oliveira",
+  "email": "ana.oliveira@email.com",
+  "qtdeEventosAtivos": 3
+}
+
+## Atualizar organizador
+PUT http://localhost:8080/cadastropalestras/organizadores/1
+Content-Type: application/json
+
+{
+  "nome": "Ana Oliveira Atualizada",
+  "email": "ana.oliveira@email.com",
+  "qtdeEventosAtivos": 5
+}
+
+## Deletar organizador
+DELETE http://localhost:8080/cadastropalestras/organizadores/1
+
+###
+
+### PALESTRANTES
+
+## Listar todos os palestrantes
+GET http://localhost:8080/cadastropalestras/palestrantes
+
+## Cadastrar palestrante
+POST http://localhost:8080/cadastropalestras/palestrantes
+Content-Type: application/json
+
+{
+  "nome": "Lucas",
+  "biografia": "Especialista em desenvolvimento backend com Java e Spring Boot.",
+  "areaAtuacao": "Backend Java"
+}
+
+## Atualizar palestrante
+PUT http://localhost:8080/cadastropalestras/palestrantes/1
+Content-Type: application/json
+
+{
+  "nome": "Lucas Atualizado",
+  "biografia": "Especialista em desenvolvimento backend com Java e Spring Boot.",
+  "areaAtuacao": "Backend Java"
+}
+
+## Deletar palestrante
+DELETE http://localhost:8080/cadastropalestras/palestrantes/1
+
+###
+
+### EVENTOS
+
+## Listar todos os eventos
+GET http://localhost:8080/cadastropalestras/eventos
+
+## Cadastrar evento
+POST http://localhost:8080/cadastropalestras/eventos
+Content-Type: application/json
+
+{
+  "nome": "JavaDay 2025",
+  "endereco": "Av. Paulista, 1000 - São Paulo, SP",
+  "data": "2025-09-10",
+  "hora": "09:00",
+  "duracao": 480
+}
+
+## Atualizar evento
+PUT http://localhost:8080/cadastropalestras/eventos/1
+Content-Type: application/json
+
+{
+  "nome": "JavaDay 2025 Atualizado",
+  "endereco": "Av. Paulista, 1000 - São Paulo, SP",
+  "data": "2025-09-10",
+  "hora": "09:00",
+  "duracao": 480
+}
+
+## Deletar evento
+DELETE http://localhost:8080/cadastropalestras/eventos/1
+
+###
+
+### PALESTRAS
+
+## Listar todas as palestras
+GET http://localhost:8080/cadastropalestras/palestras
+
+## Cadastrar palestra (requer evento e palestrante já cadastrados)
+POST http://localhost:8080/cadastropalestras/palestras
+Content-Type: application/json
+
+{
+  "nome": "Introdução ao Spring Boot",
+  "tema": "Backend",
+  "local": "Auditório A",
+  "data": "2025-09-10",
+  "hora": "14:00",
+  "duracao": 90,
+  "evento": { "id": 1 },
+  "palestrantes": [{ "id": 1 }]
+}
+
+## Atualizar palestra
+PUT http://localhost:8080/cadastropalestras/palestras/1
+Content-Type: application/json
+
+{
+  "nome": "Introdução ao Spring Boot Atualizada",
+  "tema": "Backend",
+  "local": "Auditório A",
+  "data": "2025-09-10",
+  "hora": "14:00",
+  "duracao": 90,
+  "evento": { "id": 1 },
+  "palestrantes": [{ "id": 1 }]
+}
+
+## Deletar palestra
+DELETE http://localhost:8080/cadastropalestras/palestras/1
