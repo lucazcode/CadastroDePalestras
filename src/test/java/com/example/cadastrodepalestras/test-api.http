@@ -1,0 +1,8 @@
+POST http://localhost:8080/cadastropalestras/palestrantes
+Content-Type: application/json
+
+{
+  "nome": "Lucas",
+  "biografia": "Especialista em desenvolvimento backend com Java e Spring Boot.",
+  "areaAtuacao": "Backend Java"
+}
